@@ -1,0 +1,66 @@
+// GLOBAL STYLING
+#also-enjoyed-service {
+  width: 100%;
+}
+// CAROUSEL STYLING
+.also-enjoyed-carousel {
+  // overflow-x: scroll;
+  width: calc((150px + 20px) * 12);
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+// BOOK ITEM STYLING
+.also-enjoyed-bookItem {
+  width: 150px;
+  font-family: Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  margin-right: 20px;
+  float: left;
+}
+.also-enjoyed-bookCover {
+  max-width: 100%;
+  border: 0;
+  cursor: pointer;
+}
+.also-enjoyed-under-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+.also-enjoyed-bookTitle {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+  color: #141414;
+}
+.also-enjoyed-bookTitle:hover {
+  text-decoration: underline;
+}
+.also-enjoyed-bookAuthor-area {
+  font-weight: 400;
+  line-height: 22px;
+  margin: 4px 0 0 0;
+  color: rgba(20,20,20,0.65);
+}
+.also-enjoyed-bookAuthor {
+  color: #0274B6;
+  cursor: pointer
+}
+.also-enjoyed-bookAuthor:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 1020px) {
+  #also-enjoyed-service {
+    max-width: 1020px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 10px;
+  }
+}
