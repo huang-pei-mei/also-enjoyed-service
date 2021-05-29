@@ -67,14 +67,16 @@ class App extends React.Component {
         <>
           <h2 className='also-enjoyed-title'>Listeners also enjoyed...</h2>
           <div className='also-enjoyed-carousel'>
-            <span className='also-enjoyed-toggle-arrows' id='also-enjoyed-previous'></span>
+            <div className='also-enjoyed-toggle-arrows-container'>
+              <span className='also-enjoyed-toggle-arrow' id='also-enjoyed-previous'></span>
+              <span className='also-enjoyed-toggle-arrow' id='also-enjoyed-next'></span>
+            </div>
             {relatedIdData.map((book) => {
               return <BookItem
               book={book}
               key={book.id}
               />;
             })}
-            <span className='also-enjoyed-toggle-arrows' id='also-enjoyed-next'></span>
           </div>
         </>
       );

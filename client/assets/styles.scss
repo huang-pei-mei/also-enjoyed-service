@@ -16,8 +16,10 @@
   white-space: nowrap;
   position: relative;
 
-  .also-enjoyed-toggle-arrows {
+  .also-enjoyed-toggle-arrows-container {
     z-index: 99;
+  }
+  .also-enjoyed-toggle-arrow {
     width: 40px;
     height: 90px;
     position: absolute;
@@ -26,15 +28,19 @@
     vertical-align: middle;
     display: inline-block;
   }
-  .also-enjoyed-toggle-arrows:hover {
-    background-color: rgba(210, 210, 210, 1);
-  }
+
+  // .also-enjoyed-toggle-arrows-container:hover {
+  //   background-color: rgba(210, 210, 210, 1);
+  // }
   #also-enjoyed-previous {
     left: 0;
   }
   #also-enjoyed-next {
     right: 20px;
   }
+}
+.also-enjoyed-carousel:hover .also-enjoyed-toggle-arrow {
+  background-color: rgba(210, 210, 210, 1);
 }
 // BOOK ITEM STYLING
 .also-enjoyed-bookItem {
