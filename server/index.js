@@ -14,10 +14,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/relatedIds/:bookId', (req, res) => {
-  findRelated(req.params.bookId)
-    .then((data) => {
-      res.send(data[0]);
-    });
+  const bookId = req.params.bookId;
+  if (bookId === undefined || bookId === null) {
+    res.status(400).send('Specified item page does not exist');
+  } else {
+    findRelated(req.params.bookId)
+      .then((data) => {
+        res.status(200).send(data[0]);
+      });
+  }
 })
 
 app.listen(port, () => {
