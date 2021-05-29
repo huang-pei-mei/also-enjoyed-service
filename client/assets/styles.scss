@@ -1,24 +1,43 @@
 // GLOBAL STYLING
 #also-enjoyed-service {
   width: 100%;
+  font-family: Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
 }
 // CAROUSEL STYLING
 .also-enjoyed-carousel {
-  // overflow-x: scroll;
-  width: calc((150px + 20px) * 12);
+  overflow: hidden;
+  width: calc((150px + 20px) * 6);
+  height: 225px;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 20px;
+  white-space: nowrap;
+  position: relative;
+
+  .also-enjoyed-toggle-arrows {
+    z-index: 99;
+    width: 40px;
+    height: 90px;
+    position: absolute;
+    top: 35px;
+    background-color: rgba(75, 75, 75, 0.65);
+    vertical-align: middle;
+    display: inline-block;
+  }
+  #also-enjoyed-previous {
+    left: 0;
+  }
+  #also-enjoyed-next {
+    right: 20px;
+  }
 }
 // BOOK ITEM STYLING
 .also-enjoyed-bookItem {
   width: 150px;
-  font-family: Arial,sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  display: block;
   margin-right: 20px;
-  float: left;
+  display: inline-block;
 }
 .also-enjoyed-bookCover {
   max-width: 100%;
