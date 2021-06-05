@@ -68,7 +68,11 @@ class App extends React.Component {
           <h2 className='also-enjoyed-title'>Listeners also enjoyed...</h2>
           <div className='also-enjoyed-carousel'>
             <div className='also-enjoyed-toggle-arrows-container'>
-              <span className='also-enjoyed-toggle-arrow' id='also-enjoyed-previous'></span>
+              <span
+                className='also-enjoyed-toggle-arrow'
+                id='also-enjoyed-previous'
+                onClick={() => console.log('clicked!')}
+              ></span>
               <span className='also-enjoyed-toggle-arrow' id='also-enjoyed-next'></span>
             </div>
             {relatedIdData.map((book) => {

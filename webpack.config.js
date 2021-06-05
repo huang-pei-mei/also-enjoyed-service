@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, '/client/index.js'),
@@ -27,8 +27,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'client/assets/index.html',
-      title: 'index.html'
-    })
+      title: 'index.html',
+      inject: 'body'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'client/assets/next.png' }],
+    }),
   ],
   output: {
     filename: 'alsoEnjoyedBundle.js',
