@@ -18,6 +18,11 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'url-loader',
+        include: path.join(__dirname, 'client/assets/next.png')
       }
     ]
   },
