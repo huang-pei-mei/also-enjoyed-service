@@ -12,6 +12,7 @@ class App extends React.Component {
       relatedIds: [],
       relatedIdData: []
     };
+    this.onPageToggle = this.onPageToggle.bind(this);
   }
 
   componentDidMount() {
@@ -60,6 +61,33 @@ class App extends React.Component {
       });
   }
 
+  onPageToggle(e) {
+    e.preventDefault();
+    let data;
+    if (e.target.id === 'also-enjoyed-previous') {
+      if (this.state.relatedIdData[0].i === 0) {
+        return;
+      } else {
+        data = this.state.relatedIdData;
+        for (let i = 0; i < 6; i++) {
+          data.unshift(data.pop());
+        }
+      }
+    } else {
+      if (this.state.relatedIdData[0].i === 12) {
+        return;
+      } else {
+        data = this.state.relatedIdData;
+        for (let i = 0; i < 6; i++) {
+          data.push(data.shift());
+        }
+      }
+    }
+    this.setState({
+      relatedIdData: data
+    });
+  }
+
   render() {
     const { isLoading } = this.state;
     console.log('isLoading:', isLoading);
@@ -77,9 +105,13 @@ class App extends React.Component {
               <span
                 className='also-enjoyed-toggle-arrow'
                 id='also-enjoyed-previous'
-                onClick={() => console.log('clicked!')}
+                onClick={this.onPageToggle}
               ></span>
-              <span className='also-enjoyed-toggle-arrow' id='also-enjoyed-next'></span>
+              <span
+                className='also-enjoyed-toggle-arrow'
+                id='also-enjoyed-next'
+                onClick={this.onPageToggle}
+              ></span>
             </div>
             {relatedIdData.map((book) => {
               return <BookItem
