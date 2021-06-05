@@ -49,6 +49,12 @@ class App extends React.Component {
       .then(response => {
         return response.data.filter(book => relatedIds.includes(book.id))
       })
+      .then(filteredData => {
+        filteredData.forEach((book, index) => {
+          book.i = index;
+        });
+        return filteredData;
+      })
       .catch(err => {
         console.error(err);
       });
