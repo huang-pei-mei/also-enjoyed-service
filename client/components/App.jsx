@@ -2,6 +2,7 @@ import React from 'react';
 
 import requests from 'axios';
 import BookItem from './BookItem.jsx';
+import ToggleDots from './ToggleDots.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -120,6 +121,7 @@ class App extends React.Component {
               />;
             })}
           </div>
+          <ToggleDots firstIndex={this.state.relatedIdData[0].i}></ToggleDots>
         </>
       );
     }

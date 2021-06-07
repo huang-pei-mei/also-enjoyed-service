@@ -82,10 +82,28 @@
 }
 .also-enjoyed-bookAuthor {
   color: #0274B6;
-  cursor: pointer
+  cursor: pointer;
 }
 .also-enjoyed-bookAuthor:hover {
   text-decoration: underline;
+}
+
+// TOGGLE DOTS
+#toggledots-area {
+  margin: auto;
+  margin-top: 10px;
+  width: 60px;
+}
+.toggledot {
+  height: 9px;
+  margin-right: 15px;
+  opacity: 0.5;
+}
+#page2 {
+  margin-right: 0;
+}
+.toggledot:hover {
+  opacity: 1;
 }
 
 @media only screen and (min-width: 1020px) {
