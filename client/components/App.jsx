@@ -15,10 +15,49 @@ class App extends React.Component {
     };
     this.onPageToggle = this.onPageToggle.bind(this);
     this.onDotToggle = this.onDotToggle.bind(this);
+    this.changeBookId = this.changeBookId.bind(this);
   }
 
   componentDidMount() {
     const bookId = this.getBookId();
+    this.getBookData(bookId);
+    // requests.get(`http://localhost:4000/api/relatedIds/${bookId}`)
+    //   .then((data) => {
+    //     return this.setState({
+    //       relatedIds: data.data.related_ids,
+    //       bookId: bookId
+    //     })
+    //   })
+    //   .then(() => {
+    //     return this.getRelatedIdData();
+    //   })
+    //   .then(filteredData => {
+    //     this.setState({
+    //       relatedIdData: filteredData,
+    //       isLoading: false
+    //     });
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //   });
+  }
+
+  getBookId() {
+    const qString = window.location.search;
+    const urlParams = new URLSearchParams(qString);
+    return urlParams.get('bookId');
+  }
+
+  changeBookId(id) {
+    const key = encodeURIComponent('bookId');
+    const value = encodeURIComponent(id);
+    const paramToSet = `${key}=${value}`;
+    let newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?${paramToSet}`;
+    window.history.pushState({ path: newUrl }, '', newUrl);
+    this.getBookData(id);
+  }
+
+  getBookData(bookId) {
     requests.get(`http://localhost:4000/api/relatedIds/${bookId}`)
       .then((data) => {
         return this.setState({
@@ -38,12 +77,6 @@ class App extends React.Component {
       .catch((err) => {
         console.error(err);
       });
-  }
-
-  getBookId() {
-    const qString = window.location.search;
-    const urlParams = new URLSearchParams(qString);
-    return urlParams.get('bookId');
   }
 
   async getRelatedIdData() {
@@ -135,6 +168,7 @@ class App extends React.Component {
               return <BookItem
               book={book}
               key={book.id}
+              changeBookId={this.changeBookId}
               />;
             })}
           </div>
