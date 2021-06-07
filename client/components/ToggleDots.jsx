@@ -7,6 +7,15 @@ class ToggleDots extends React.Component {
     this.state = {
       selectedPage: this.props.firstIndex
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.props.onDotToggle(e);
+    this.setState({
+      selectedPage: parseInt(e.target.id[4])
+    });
   }
 
   render() {
@@ -18,8 +27,9 @@ class ToggleDots extends React.Component {
               <img
                 src={circle}
                 alt={`page${page}`}
-                className='toggledot'
+                className={this.state.selectedPage === page ? 'toggledot toggledot-selected' : 'toggledot toggledot-not-selected'}
                 id={`page${page}`}
+                onClick={this.handleClick}
               ></img>
             </span>
           )

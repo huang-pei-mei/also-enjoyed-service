@@ -102,7 +102,10 @@
 #page2 {
   margin-right: 0;
 }
-.toggledot:hover {
+.toggledot-not-selected:hover {
+  opacity: 0.25;
+}
+.toggledot-selected {
   opacity: 1;
 }
 

@@ -14,6 +14,7 @@ class App extends React.Component {
       relatedIdData: []
     };
     this.onPageToggle = this.onPageToggle.bind(this);
+    this.onDotToggle = this.onDotToggle.bind(this);
   }
 
   componentDidMount() {
@@ -89,6 +90,22 @@ class App extends React.Component {
     });
   }
 
+  onDotToggle(e) {
+    e.preventDefault();
+    const page = parseInt(e.target.id[4]);
+    if (this.state.relatedIdData[0].i / 6 === page) {
+      return;
+    } else {
+      let data = this.state.relatedIdData;
+      while(data[0].i / 6 !== page) {
+        data.push(data.shift());
+      }
+      this.setState({
+        relatedIdData: data
+      });
+    }
+  }
+
   render() {
     const { isLoading } = this.state;
     console.log('isLoading:', isLoading);
@@ -121,7 +138,7 @@ class App extends React.Component {
               />;
             })}
           </div>
-          <ToggleDots firstIndex={this.state.relatedIdData[0].i}></ToggleDots>
+          <ToggleDots firstIndex={this.state.relatedIdData[0].i} onDotToggle={this.onDotToggle}></ToggleDots>
         </>
       );
     }
