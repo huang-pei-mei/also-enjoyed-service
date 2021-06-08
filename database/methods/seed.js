@@ -3,9 +3,9 @@ const { Model } = require('../index.js');
 const getRelatedIds = (id) => {
   let related_ids = new Set();
 
-  for (let rel = 0; rel < 12; rel++) {
+  for (let rel = 0; rel < 18; rel++) {
     let rel_id = id;
-    while (rel_id === id) {
+    while (related_ids.has(rel_id)) {
       rel_id = randomIdGenerator();
     }
 
