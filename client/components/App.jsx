@@ -3,6 +3,7 @@ import React from 'react';
 import requests from 'axios';
 import BookItem from './BookItem.jsx';
 import ToggleDots from './ToggleDots.jsx';
+const REACT_ENV = 'dev';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,25 +22,6 @@ class App extends React.Component {
   componentDidMount() {
     const bookId = this.getBookId();
     this.getBookData(bookId);
-    // requests.get(`http://localhost:4000/api/relatedIds/${bookId}`)
-    //   .then((data) => {
-    //     return this.setState({
-    //       relatedIds: data.data.related_ids,
-    //       bookId: bookId
-    //     })
-    //   })
-    //   .then(() => {
-    //     return this.getRelatedIdData();
-    //   })
-    //   .then(filteredData => {
-    //     this.setState({
-    //       relatedIdData: filteredData,
-    //       isLoading: false
-    //     });
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //   });
   }
 
   getBookId() {
@@ -58,7 +40,8 @@ class App extends React.Component {
   }
 
   getBookData(bookId) {
-    requests.get(`http://localhost:4000/api/relatedIds/${bookId}`)
+    const url = REACT_ENV === 'dev' ? 'http://localhost' : 'http://ec2-35-162-103-218.us-west-2.compute.amazonaws.com';
+    requests.get(`${url}:4000/api/relatedIds/${bookId}`)
       .then((data) => {
         return this.setState({
           relatedIds: data.data.related_ids,
@@ -81,7 +64,7 @@ class App extends React.Component {
 
   async getRelatedIdData() {
     const { relatedIds } = this.state;
-    return requests.get('http://localhost:2002/api/books')
+    return requests.get('http://13.57.14.144:2002/api/books')
       .then(response => {
         return response.data.filter(book => relatedIds.includes(book.id))
       })
