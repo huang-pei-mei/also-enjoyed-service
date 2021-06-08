@@ -1,13 +1,14 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-
+const cors = require('cors');
 
 const port = process.env.PORT || 4000;
 
 const { findRelated } = require('../database/methods/query.js');
 
 app.use(express.static(path.join(__dirname, '..', '/public')));
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.end();
