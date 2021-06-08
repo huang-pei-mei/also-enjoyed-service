@@ -36,7 +36,8 @@ class App extends React.Component {
     const paramToSet = `${key}=${value}`;
     let newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?${paramToSet}`;
     window.history.pushState({ path: newUrl }, '', newUrl);
-    this.getBookData(id);
+    window.location.reload(false);
+    // this.getBookData(id);
   }
 
   getBookData(bookId) {
