@@ -5,16 +5,11 @@ const getRelatedIds = (id) => {
 
   for (let rel = 0; rel < 18; rel++) {
     let rel_id = id;
-    while (related_ids.has(rel_id)) {
+    while (related_ids.has(rel_id) || rel_id === id) {
       rel_id = randomIdGenerator();
     }
 
-    try {
-      related_ids.add(rel_id);
-    } catch (err) {
-      rel_id = randomIdGenerator();
-      related_ids.add(rel_id);
-    }
+    related_ids.add(rel_id);
   }
 
   return Array.from(related_ids);

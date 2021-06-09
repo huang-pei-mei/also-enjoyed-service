@@ -109,11 +109,29 @@
   opacity: 1;
 }
 
-@media only screen and (min-width: 1020px) {
+@media only screen and (min-width: 960px) {
   #also-enjoyed-service {
     max-width: 1020px;
     margin: 0 auto;
     width: 100%;
     padding: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  #also-enjoyed-service {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 10px;
+  }
+  #toggledots-area {
+    display: none;
+  }
+  .also-enjoyed-toggle-arrows-container {
+    display: none;
+  }
+  .also-enjoyed-carousel {
+    overflow-x: scroll;
   }
 }

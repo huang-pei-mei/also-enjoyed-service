@@ -1,0 +1,1 @@
+ssh -i "rpt27-also-enjoyed-service.pem" ec2-user@ec2-35-162-103-218.us-west-2.compute.amazonaws.com
