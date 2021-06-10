@@ -1,5 +1,5 @@
 import React from 'react';
-
+import LazyLoad from 'react-lazyload';
 import requests from 'axios';
 import BookItem from './BookItem.jsx';
 import ToggleDots from './ToggleDots.jsx';
@@ -148,12 +148,24 @@ class App extends React.Component {
                 onClick={this.onPageToggle}
               ></span>
             </div>
-            {relatedIdData.map((book) => {
-              return <BookItem
-              book={book}
-              key={book.id}
-              changeBookId={this.changeBookId}
-              />;
+            {relatedIdData.map((book, index) => {
+              if (index < 6) {
+                return <BookItem
+                book={book}
+                key={book.id}
+                changeBookId={this.changeBookId}
+                />;
+              } else {
+                return (
+                <LazyLoad height={150} once>
+                  <BookItem
+                    book={book}
+                    key={book.id}
+                    changeBookId={this.changeBookId}
+                  />
+                </LazyLoad>
+                );
+              }
             })}
           </div>
           <ToggleDots firstIndex={this.state.relatedIdData[0].i} onDotToggle={this.onDotToggle}></ToggleDots>
