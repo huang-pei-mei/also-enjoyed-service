@@ -7,6 +7,7 @@
 }
 // CAROUSEL STYLING
 .also-enjoyed-carousel {
+  // z-index: 0;
   overflow: hidden;
   width: calc((150px + 20px) * 6);
   height: 225px;
@@ -109,6 +110,88 @@
   opacity: 1;
 }
 
+
+// MODAL STYLING
+#also-enjoyed-modal {
+  display: block;
+  position: absolute;
+  background-color: white;
+  top: -50px;
+  // left: 0;
+  color: black;
+  width: 300px;
+  padding: 10px 15px;
+  z-index: 9999;
+  box-shadow: -1px -1px 3px rgb(184, 184, 184), 1px 1px 3px rgb(184, 184, 184), -1px 1px 3px rgb(184, 184, 184), 1px -1px 3px rgb(184, 184, 184);
+
+  .also-enjoyed-modal-title-container {
+    .also-enjoyed-modal-title {
+      letter-spacing: -0.5px;
+      transform: scaleY(1.12);
+      margin: 0;
+      margin-top: 10px;
+    }
+    .also-enjoyed-modal-subtitle {
+      margin: 0;
+      margin-top: 5px;
+      font-weight: 200;
+      font-size: 15px;
+    }
+    margin-bottom: 0;
+  }
+  .also-enjoyed-modal-meta-container {
+    color: grey;
+    font-size: 15px;
+    margin: 10px 0;
+    margin-bottom: 15px;
+    .also-enjoyed-modal-meta {
+      font-weight: 200;
+      margin: 0;
+    }
+  }
+  .also-enjoyed-modal-stars-container {
+    color: grey;
+    font-size: 12px;
+    .also-enjoyed-modal-stars {
+      font-weight: 200;
+      margin: 0;
+      margin-bottom: 7px;
+    }
+  }
+  .also-enjoyed-modal-summary {
+    color: black;
+    font-size: 13px;
+  }
+  .also-enjoyed-modal-review {
+    margin: 0;
+    .also-enjoyed-modal-stars {
+      height: 10px;
+    }
+    .also-enjoyed-modal-review-title {
+      font-style: italic;
+      font-weight: 600;
+      margin: 0;
+      font-size: 16px;
+      padding: 5px 0;
+    }
+    .also-enjoyed-modal-review-author {
+      color: grey;
+      font-size: 12px;
+      font-weight: 200;
+      margin: 0;
+      em {
+        color: black;
+        font-style: normal;
+      }
+    }
+  }
+}
+
+// .also-enjoyed-bookItem:hover + .also-enjoyed-modal {
+//   display: block;
+//   position: absolute;
+//   background-color: yellow;
+// }
 @media only screen and (min-width: 960px) {
   #also-enjoyed-service {
     max-width: 1020px;

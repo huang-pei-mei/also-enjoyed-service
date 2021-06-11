@@ -3,6 +3,7 @@ import LazyLoad from 'react-lazyload';
 import requests from 'axios';
 import BookItem from './BookItem.jsx';
 import ToggleDots from './ToggleDots.jsx';
+import Modal from './Modal.jsx';
 const REACT_ENV = 'dev';
 
 class App extends React.Component {
@@ -157,7 +158,7 @@ class App extends React.Component {
                 />;
               } else {
                 return (
-                <LazyLoad height={150} once>
+                <LazyLoad height={150} once key={book.id}>
                   <BookItem
                     book={book}
                     key={book.id}
@@ -169,6 +170,7 @@ class App extends React.Component {
             })}
           </div>
           <ToggleDots firstIndex={this.state.relatedIdData[0].i} onDotToggle={this.onDotToggle}></ToggleDots>
+          {/* <Modal book={{subtitle: 'subtitle'}} ></Modal> */}
         </>
       );
     }
