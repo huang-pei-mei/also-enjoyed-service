@@ -3,7 +3,7 @@ import LazyLoad from 'react-lazyload';
 import requests from 'axios';
 import BookItem from './BookItem.jsx';
 import ToggleDots from './ToggleDots.jsx';
-const REACT_ENV = 'dev';
+const REACT_ENV = 'prod';
 
 class App extends React.Component {
   constructor(props) {
@@ -64,16 +64,13 @@ class App extends React.Component {
   }
 
   async getRelatedIdData() {
-    const { relatedIds } = this.state;
-    return requests.get('http://13.57.14.144:2002/api/books')
-      .then(response => {
-        return response.data.filter(book => relatedIds.includes(book.id))
-      })
-      .then(filteredData => {
-        filteredData.forEach((book, index) => {
+    const relatedIds = this.state.relatedIds.join();
+    return requests.get(`http://13.57.14.144:2002/api/books?ids=${relatedIds}`)
+      .then(data => {
+        data.forEach((book, index) => {
           book.i = index;
         });
-        return filteredData;
+        return data;
       })
       .catch(err => {
         console.error(err);
