@@ -49,9 +49,7 @@ class App extends React.Component {
           bookId: bookId
         })
       })
-      .then(() => {
-        return this.getRelatedIdData();
-      })
+      .then(() => this.getRelatedIdData())
       .then(filteredData => {
         this.setState({
           relatedIdData: filteredData,
@@ -64,17 +62,21 @@ class App extends React.Component {
   }
 
   async getRelatedIdData() {
-    const relatedIds = this.state.relatedIds.join();
-    return requests.get(`http://13.57.14.144:2002/api/books?ids=${relatedIds}`)
-      .then(data => {
-        data.forEach((book, index) => {
-          book.i = index;
+    return new Promise((resolve, reject) => {
+      const relatedIds = this.state.relatedIds.join();
+      requests.get(`http://13.57.14.144:2002/api/books?ids=${relatedIds}`)
+        .then (res => res.data)
+        .then(data => {
+          data.forEach((book, index) => {
+            book.i = index;
+          });
+          resolve(data);
+        })
+        .catch(err => {
+          console.error(err);
+          reject(err);
         });
-        return data;
-      })
-      .catch(err => {
-        console.error(err);
-      });
+    })
   }
 
   onPageToggle(e) {
@@ -128,7 +130,7 @@ class App extends React.Component {
       return <div>Loading ...</div>;
     } else {
       const { relatedIdData } = this.state;
-      console.log(relatedIdData);
+      console.log('realatedId:', relatedIdData);
       return (
         <>
           <h2 className='also-enjoyed-title'>Listeners also enjoyed...</h2>
