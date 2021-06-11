@@ -130,7 +130,6 @@ class App extends React.Component {
       return <div>Loading ...</div>;
     } else {
       const { relatedIdData } = this.state;
-      console.log('realatedId:', relatedIdData);
       return (
         <>
           <h2 className='also-enjoyed-title'>Listeners also enjoyed...</h2>
