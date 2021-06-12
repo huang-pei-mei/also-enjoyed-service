@@ -15,6 +15,12 @@
 ## 1.2 Usage
 The Also Enjoyed Service is a component of a larger project to create a look-alike Audible Item Page built with a Service-Oriented Architecture. Also Enjoyed is a fullstack service that provides a list of related items for an Audible item page, and displays them in a carousel with a modal element for additional information.
 
+Technologies Used:
+- React
+- Node.js
+- Express
+- MongoDB
+
 ![Also Enjoyed Service Demo](./readmeAssets/listenersAlsoEnjoyedCover.png)
 
 - Scroll Feature
