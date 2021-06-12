@@ -186,6 +186,21 @@
   }
 }
 
+.also-enjoyed-star {
+  filter: invert(81%) sepia(17%) saturate(6686%) hue-rotate(356deg) brightness(109%) contrast(111%);
+  width: 15px;
+  padding-right: 5px;
+}
+.also-enjoyed-modal-stars-count {
+  float: right;
+  margin-right: 40px;
+}
+.also-enjoyed-stars {
+  display: inline-block;
+  // float: right;
+  // margin-right: 40px;
+}
+
 // .also-enjoyed-bookItem:hover + .also-enjoyed-modal {
 //   display: block;
 //   position: absolute;

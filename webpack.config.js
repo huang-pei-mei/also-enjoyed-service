@@ -24,7 +24,10 @@ module.exports = {
         loader: 'url-loader',
         include: [
           path.join(__dirname, 'client/assets/next.png'),
-          path.join(__dirname, 'client/assets/circle.png')
+          path.join(__dirname, 'client/assets/circle.png'),
+          path.join(__dirname, 'client/assets/star.png'),
+          path.join(__dirname, 'client/assets/starFilled.png'),
+          path.join(__dirname, 'client/assets/starHalf.png')
         ]
       }
     ]
@@ -39,7 +42,7 @@ module.exports = {
       inject: 'body'
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'client/assets/next.png' }, { from: 'client/assets/circle.png' }],
+      patterns: [{ from: 'client/assets/next.png' }, { from: 'client/assets/circle.png' }, { from: 'client/assets/star.png' }, { from: 'client/assets/starFilled.png' }, { from: 'client/assets/starHalf.png' }],
     }),
   ],
   output: {

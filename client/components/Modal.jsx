@@ -1,5 +1,6 @@
 import React from 'react';
 import requests from 'axios';
+import Stars from './Stars.jsx';
 
 class Modal extends React.Component {
   constructor(props) {
@@ -59,13 +60,13 @@ class Modal extends React.Component {
         {this.state.aggReviews &&
           <div className='also-enjoyed-modal-stars-container'>
             <div className='also-enjoyed-modal-stars'>
-              Overall: {this.state.aggReviews.overall.average}STARS COMPONENT {this.state.aggReviews.overall.total}
+              Overall: <span className='also-enjoyed-modal-stars-count'><Stars average={this.state.aggReviews.overall.average} /> {this.state.aggReviews.overall.total}</span>
             </div>
             <div className='also-enjoyed-modal-stars'>
-              Performance: {this.state.aggReviews.performance.average}STARS COMPONENT {this.state.aggReviews.performance.total}
+              Performance: <span className='also-enjoyed-modal-stars-count'><Stars average={this.state.aggReviews.performance.average} /> {this.state.aggReviews.performance.total}</span>
             </div>
             <div className='also-enjoyed-modal-stars'>
-              Story: {this.state.aggReviews.story.average}STARS COMPONENT {this.state.aggReviews.story.total}
+              Story: <span className='also-enjoyed-modal-stars-count'><Stars average={this.state.aggReviews.story.average} /> {this.state.aggReviews.story.total}</span>
             </div>
           </div>
         }
