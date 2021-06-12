@@ -14,8 +14,8 @@ class Modal extends React.Component {
 
   componentDidMount() {
     const bookId = this.props.book.id;
-    // const reviewsService = 'http://54.183.2.218:4001/reviews/carouselReviews';
-    const reviewsService = 'http://localhost:4001/reviews/carouselReviews';
+    const reviewsService = 'http://54.183.2.218:4001/reviews/carouselReviews';
+    // const reviewsService = 'http://localhost:4001/reviews/carouselReviews';
     const summaryService = `http://ec2-18-188-135-5.us-east-2.compute.amazonaws.com:1220/api/summaries/${bookId}`;
     const aggReviewService = `http://ec2-18-220-21-137.us-east-2.compute.amazonaws.com:2880/api/aggReview/${bookId}`;
 
