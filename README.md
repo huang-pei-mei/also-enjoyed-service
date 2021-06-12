@@ -1,16 +1,16 @@
 # Also Enjoyed Service
 ## Table of Contents
-[- 1.1 Related Projects](#1.1-related-projects)
-[- 1.2 Usage ](#1.2-usage)
-[- 1.3 Requirements / Setup](#1.3-requirements-/-setup)
-[- 1.4 Backlog / Noted Opportunities](1.4-backlog-/-noted-opportunities)
+-[1.1 Related Projects](#1.1-related-projects)
+-[ 1.2 Usage ](#1.2-usage)
+-[ 1.3 Requirements / Setup](#1.3-requirements-/-setup)
+-[ 1.4 Backlog / Noted Opportunities](1.4-backlog-/-noted-opportunities)
 
 ## 1.1 Related Projects
-[- Title Service](https://github.com/huang-pei-mei/title-service)
-[- Price Service](https://github.com/huang-pei-mei/price-service)
-[- Summary Service](https://github.com/huang-pei-mei/FEC-Publishers-Summary)
-[- Aggregate Review Service](https://github.com/huang-pei-mei/FEC-Agg.Review)
-[- Review Service](https://github.com/huang-pei-mei/reviews-service)
+-[ Title Service](https://github.com/huang-pei-mei/title-service)
+-[ Price Service](https://github.com/huang-pei-mei/price-service)
+-[ Summary Service](https://github.com/huang-pei-mei/FEC-Publishers-Summary)
+-[ Aggregate Review Service](https://github.com/huang-pei-mei/FEC-Agg.Review)
+-[ Review Service](https://github.com/huang-pei-mei/reviews-service)
 
 ## 1.2 Usage
 The Also Enjoyed Service is a fullstack service that provides a list of related items for an Audible item page, and displays them in a carousel with a modal element for additional information.
