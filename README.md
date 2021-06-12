@@ -1,9 +1,9 @@
 # Also Enjoyed Service
 ## Table of Contents
--[1.1 Related Projects](#1.1-related-projects)
--[ 1.2 Usage ](#1.2-usage)
--[ 1.3 Requirements / Setup](#1.3-requirements-/-setup)
--[ 1.4 Backlog / Noted Opportunities](1.4-backlog-/-noted-opportunities)
+- [1.1 Related Projects](#1.1-related-projects)
+- [1.2 Usage ](#1.2-usage)
+- [1.3 Requirements / Setup](#1.3-requirements-/-setup)
+- [1.4 Backlog / Noted Opportunities](#1.4-backlog-/-noted-opportunities)
 
 ## 1.1 Related Projects
 -[ Title Service](https://github.com/huang-pei-mei/title-service)
