@@ -24,6 +24,9 @@ app.get('/api/relatedIds/:bookId', (req, res) => {
     findRelated(req.params.bookId)
       .then((data) => {
         res.status(200).send(data[0]);
+      })
+      .catch(err => {
+        res.status(404).send('Book Item not found');
       });
   }
 })
