@@ -1,20 +1,20 @@
 import React from 'react';
 
 const Modal = (props) => {
-
+  console.log('== MODAL BOOK DATA ==>', props.book)
   return (
-    <div id='also-enjoyed-modal'>
+    <div id='also-enjoyed-modal' style={{left:`${props.modalLeft}px`}}>
       <div className='also-enjoyed-modal-title-container'>
-        <h2 className='also-enjoyed-modal-title'>Book Title</h2>
+        <h2 className='also-enjoyed-modal-title'>{props.book.title}</h2>
         {props.book.subtitle &&
-          <h3 className='also-enjoyed-modal-subtitle'>Book Subtitle</h3>
+          <h3 className='also-enjoyed-modal-subtitle'>{props.book.subtitle}</h3>
         }
       </div>
       <div className='also-enjoyed-modal-meta-container'>
-        <h5 className='also-enjoyed-modal-meta'>By: Author</h5>
-        <h5 className='also-enjoyed-modal-meta'>Narrated by: Narrator</h5>
-        <h5 className='also-enjoyed-modal-meta'>Length: X hrs and Y mins</h5>
-        <h5 className='also-enjoyed-modal-meta'>Abridged</h5>
+        <h5 className='also-enjoyed-modal-meta'>By: {props.book.author}</h5>
+        <h5 className='also-enjoyed-modal-meta'>Narrated by: {props.book.narrator}</h5>
+        <h5 className='also-enjoyed-modal-meta'>Length: {props.book.length.split(':')[0]} hrs and {props.book.length.split(':')[1]} mins</h5>
+        <h5 className='also-enjoyed-modal-meta'>{props.book.version.split(' ')[0]}</h5>
       </div>
       <div className='also-enjoyed-modal-stars-container'>
         <div className='also-enjoyed-modal-stars'>

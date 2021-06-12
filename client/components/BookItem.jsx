@@ -7,7 +7,7 @@ class BookItem extends React.Component {
     this.state = {
       isHovering: false
     };
-    this.handleHover = this.handleHover.bind(this);
+    // this.handleHover = this.handleHover.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -15,22 +15,22 @@ class BookItem extends React.Component {
     this.props.changeBookId(this.props.book.id);
   }
 
-  handleHover(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    console.log('hovering!!!', e.target);
-    console.log(`changing hover state from ${this.state.isHovering} to ${!this.state.isHovering}`)
-    this.setState({
-      isHovering: !this.state.isHovering
-    });
-  }
+  // handleHover(e) {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   console.log('hovering!!!', e.target);
+  //   console.log(`changing hover state from ${this.state.isHovering} to ${!this.state.isHovering}`)
+  //   this.setState({
+  //     isHovering: !this.state.isHovering
+  //   });
+  // }
 
   render() {
     const modalLeft = (150 + 20) * (this.props.book.i % 6);
     const modalVisible = this.state.isHovering;
 
     return (
-        <div className='also-enjoyed-bookItem' onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+        <div className='also-enjoyed-bookItem' id={this.props.book.i} onMouseEnter={this.props.handleHover} onMouseLeave={this.props.handleHover}>
           <img
             className='also-enjoyed-bookCover'
             src={this.props.book.imageUrl}
@@ -44,13 +44,13 @@ class BookItem extends React.Component {
           <span className='also-enjoyed-bookAuthor-area also-enjoyed-under-text'>
             By: <span className='also-enjoyed-bookAuthor'>{this.props.book.author}</span>
           </span>
-          {
+          {/* {
             this.state.isHovering &&
             <Modal
               book={{subtitle: ''}}
               style={{left: modalLeft + 'px'}}
             ></Modal>
-          }
+          } */}
         </div>
     );
   }

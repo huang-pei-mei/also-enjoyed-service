@@ -13,11 +13,13 @@ class App extends React.Component {
       isLoading: true,
       bookId: null,
       relatedIds: [],
-      relatedIdData: []
+      relatedIdData: [],
+      isHovering: null
     };
     this.onPageToggle = this.onPageToggle.bind(this);
     this.onDotToggle = this.onDotToggle.bind(this);
     this.changeBookId = this.changeBookId.bind(this);
+    this.handleHover = this.handleHover.bind(this);
   }
 
   componentDidMount() {
@@ -124,8 +126,18 @@ class App extends React.Component {
     }
   }
 
+  handleHover(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    const hoverTarget = parseInt(e.target.id) % 6;
+    this.setState({
+      isHovering: this.state.isHovering || hoverTarget === undefined || isNaN(hoverTarget) ? null : hoverTarget
+    });
+  }
+
   render() {
     const { isLoading } = this.state;
+    const modalLeft = this.state.isHovering !== null ? (this.state.isHovering + 1) * (150 + 20) + 180 : 0;
     console.log('isLoading:', isLoading);
 
     if (isLoading) {
@@ -155,14 +167,16 @@ class App extends React.Component {
                 book={book}
                 key={book.id}
                 changeBookId={this.changeBookId}
+                handleHover={this.handleHover}
                 />;
               } else {
                 return (
-                <LazyLoad height={150} once key={book.id}>
+                <LazyLoad height={150} once key={book.id} style={{display: 'inline-block'}}>
                   <BookItem
                     book={book}
                     key={book.id}
                     changeBookId={this.changeBookId}
+                    handleHover={this.handleHover}
                   />
                 </LazyLoad>
                 );
@@ -170,7 +184,13 @@ class App extends React.Component {
             })}
           </div>
           <ToggleDots firstIndex={this.state.relatedIdData[0].i} onDotToggle={this.onDotToggle}></ToggleDots>
-          {/* <Modal book={{subtitle: 'subtitle'}} ></Modal> */}
+          {
+            this.state.isHovering !== null &&
+              <Modal
+                book={this.state.relatedIdData[this.state.isHovering]}
+                modalLeft={modalLeft}
+              ></Modal>
+          }
         </>
       );
     }
