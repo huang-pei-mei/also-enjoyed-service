@@ -25,9 +25,16 @@ The Also Enjoyed Service is a fullstack service that provides a list of related 
 
 - Modal Feature
 
+![Also Enjoyed Modal](./readmeAssets/alsoEnjoyed-Modal.gif)
+
+
 ### 1.2.1 API Endpoints
 - GET `/api/relatedIds/:bookId`
   - Given a `bookId`, retrieve a list of 18 bookIds that listeners of the present book also enjoyed.
+
+### 1.2.2 Deployed Web Address
+*Note*: Only available when EC2 instance is running.
+See deployed service [here](http://ec2-35-162-103-218.us-west-2.compute.amazonaws.com:4000/?bookId=4)
 
 ## 1.3 Requirements / Set Up
 **Requirements:**
