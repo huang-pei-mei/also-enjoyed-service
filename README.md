@@ -1,16 +1,16 @@
 # Also Enjoyed Service
 ## Table of Contents
-- [1.1 Related Projects](#1.1-related-projects)
-- [1.2 Usage ](#1.2-usage)
-- [1.3 Requirements / Setup](#1.3-requirements-/-setup)
-- [1.4 Backlog / Noted Opportunities](#1.4-backlog-/-noted-opportunities)
+- [1.1 Related Projects](#11-related-projects)
+- [1.2 Usage ](#12-usage)
+- [1.3 Requirements / Setup](#13-requirements-setup)
+- [1.4 Backlog / Noted Opportunities](#14-backlog-noted-opportunities)
 
 ## 1.1 Related Projects
--[ Title Service](https://github.com/huang-pei-mei/title-service)
--[ Price Service](https://github.com/huang-pei-mei/price-service)
--[ Summary Service](https://github.com/huang-pei-mei/FEC-Publishers-Summary)
--[ Aggregate Review Service](https://github.com/huang-pei-mei/FEC-Agg.Review)
--[ Review Service](https://github.com/huang-pei-mei/reviews-service)
+- [Title Service](https://github.com/huang-pei-mei/title-service)
+- [Price Service](https://github.com/huang-pei-mei/price-service)
+- [Summary Service](https://github.com/huang-pei-mei/FEC-Publishers-Summary)
+- [Aggregate Review Service](https://github.com/huang-pei-mei/FEC-Agg.Review)
+- [Review Service](https://github.com/huang-pei-mei/reviews-service)
 
 ## 1.2 Usage
 The Also Enjoyed Service is a fullstack service that provides a list of related items for an Audible item page, and displays them in a carousel with a modal element for additional information.
@@ -29,7 +29,7 @@ The Also Enjoyed Service is a fullstack service that provides a list of related 
 - GET `/api/relatedIds/:bookId`
   - Given a `bookId`, retrieve a list of 18 bookIds that listeners of the present book also enjoyed.
 
-## 1.3 Requirements / Set Up
+## 1.3 Requirements / Set Up {#13-requirements-setup}
 **Requirements:**
 - Node v14.15.0
 
@@ -44,14 +44,14 @@ The Also Enjoyed Service is a fullstack service that provides a list of related 
 
 ### 1.3.3 Install Dependencies
 1. Within root directory, run
-`npm install`
+```npm install```
 
 ### 1.3.4 Start Service
 1. Within root directory, create bundle file:
-`npm run react-prod`
+```npm run react-prod```
 2. Within root directory, launch server:
-`npm start`
+```npm start```
 
-## 1.4 Backlog / Noted Opportunies
+## 1.4 Backlog / Noted Opportunies {#14-backlog-noted-opportunities}
 - Enable RESTful client with path parameters instead of query parameters
 - Improve client accessibility
