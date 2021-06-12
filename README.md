@@ -2,8 +2,8 @@
 ## Table of Contents
 - [1.1 Related Projects](#11-related-projects)
 - [1.2 Usage ](#12-usage)
-- [1.3 Requirements / Setup](#13-requirements-setup)
-- [1.4 Backlog / Noted Opportunities](#14-backlog-noted-opportunities)
+- [1.3 Requirements / Set Up](#13-requirements--set-up)
+- [1.4 Backlog / Noted Opportunities](#14-backlog--noted-opportunies)
 
 ## 1.1 Related Projects
 - [Title Service](https://github.com/huang-pei-mei/title-service)
@@ -29,7 +29,7 @@ The Also Enjoyed Service is a fullstack service that provides a list of related 
 - GET `/api/relatedIds/:bookId`
   - Given a `bookId`, retrieve a list of 18 bookIds that listeners of the present book also enjoyed.
 
-## 1.3 Requirements / Set Up {#13-requirements-setup}
+## 1.3 Requirements / Set Up
 **Requirements:**
 - Node v14.15.0
 
@@ -52,6 +52,6 @@ The Also Enjoyed Service is a fullstack service that provides a list of related 
 2. Within root directory, launch server:
 ```npm start```
 
-## 1.4 Backlog / Noted Opportunies {#14-backlog-noted-opportunities}
+## 1.4 Backlog / Noted Opportunies
 - Enable RESTful client with path parameters instead of query parameters
 - Improve client accessibility
