@@ -20,6 +20,7 @@ Technologies Used:
 - Node.js
 - Express
 - MongoDB
+- AWS EC2
 
 ![Also Enjoyed Service Demo](./readmeAssets/listenersAlsoEnjoyedCover.png)
 
