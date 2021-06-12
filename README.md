@@ -44,13 +44,13 @@ The Also Enjoyed Service is a fullstack service that provides a list of related 
 
 ### 1.3.3 Install Dependencies
 1. Within root directory, run
-> npm install
+`npm install`
 
 ### 1.3.4 Start Service
 1. Within root directory, create bundle file:
-> npm run react-prod
+`npm run react-prod`
 2. Within root directory, launch server:
-> npm start
+`npm start`
 
 ## 1.4 Backlog / Noted Opportunies
 - Enable RESTful client with path parameters instead of query parameters
