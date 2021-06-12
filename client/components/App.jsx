@@ -137,7 +137,7 @@ class App extends React.Component {
 
   render() {
     const { isLoading } = this.state;
-    const modalLeft = this.state.isHovering !== null ? (this.state.isHovering + 1) * (150 + 20) + 180 : 0;
+    const modalLeft = this.state.isHovering !== null ? this.state.isHovering === 5 ? (this.state.isHovering) * (150 + 20) + 180 - 300 : (this.state.isHovering + 1) * (150 + 20) + 180 : 0;
     console.log('isLoading:', isLoading);
 
     if (isLoading) {
