@@ -18,8 +18,8 @@ The Also Enjoyed Service is a fullstack service that provides a list of related 
 ![Also Enjoyed Service Demo](./readmeAssets/listenersAlsoEnjoyedCover.png)
 
 - Scroll Feature
-![Also Enjoyed Service Scroll](./readmeAssets/alsoEnjoyedService_desktopScroll.mov)
-![Also Enjoyed Service Phone Scroll](./readmeAssets/alsoEnjoyedService_mobileScroll.mov)
+![Also Enjoyed Service Scroll](./readmeAssets/alsoEnjoyedService_desktopScroll.gif)
+![Also Enjoyed Service Phone Scroll](./readmeAssets/alsoEnjoyedService_mobileScroll.gif)
 
 - Modal Feature
 
